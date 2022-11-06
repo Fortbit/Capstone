@@ -47,7 +47,7 @@ public class Users {
 	
 	public Users() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Users(long account_no, String fname, String middle_name, String lname, String user_name, String password,
