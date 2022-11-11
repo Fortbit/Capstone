@@ -1,5 +1,6 @@
 package com.wellsfargo.SoftBank.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -13,69 +14,66 @@ public class ChequeBook {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Checkbook_Id;
-	private String AccountNumber;
-	private int Priority;
-	private Date IssueDate;
-	private Date RequestedDate;
+	
+	private String accountNumber;
+	private String priority;
+	private Date issueDate;
+
+	LocalDate requestDate = LocalDate.now();
 	
 	
 	public ChequeBook() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 	
-	public ChequeBook(Long checkbook_Id, String accountNumber, int priority, Date issueDate, Date requestedDate) {
+	public ChequeBook(Long checkbook_Id, String accountNumber, String priority, Date issueDate,
+			LocalDate requestDate) {
 		super();
 		Checkbook_Id = checkbook_Id;
-		AccountNumber = accountNumber;
-		Priority = priority;
-		IssueDate = issueDate;
-		RequestedDate = requestedDate;
+		this.accountNumber = accountNumber;
+		this.priority = priority;
+		this.issueDate = issueDate;
+		this.requestDate = requestDate;
 	}
-	
+
+
 	public Long getCheckbook_Id() {
 		return Checkbook_Id;
 	}
-	
+
 	public void setCheckbook_Id(Long checkbook_Id) {
 		Checkbook_Id = checkbook_Id;
 	}
-	
+
 	public String getAccountNumber() {
-		return AccountNumber;
-	}
-	
-	public void setAccountNumber(String accountNumber) {
-		AccountNumber = accountNumber;
-	}
-	
-	public int getPriority() {
-		return Priority;
-	}
-	
-	public void setPriority(int priority) {
-		Priority = priority;
-	}
-	
-	public Date getIssueDate() {
-		return IssueDate;
-	}
-	
-	public void setIssueDate(Date issueDate) {
-		IssueDate = issueDate;
-	}
-	
-	public Date getRequestedDate() {
-		return RequestedDate;
-	}
-	
-	public void setRequestedDate(Date requestedDate) {
-		RequestedDate = requestedDate;
+		return accountNumber;
 	}
 
-	@Override
-	public String toString() {
-		return "Customer [Checkbook_Id=" + Checkbook_Id + ", AccountNumber=" + AccountNumber + ", Priority=" + Priority
-				+ ", IssueDate=" + IssueDate + ", RequestedDate=" + RequestedDate + "]";
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getPriority() {
+		return priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
+
+	public Date getIssueDate() {
+		return issueDate;
+	}
+
+	public void setIssueDate(Date issueDate) {
+		this.issueDate = issueDate;
+	}
+
+	public LocalDate getDate() {
+		return requestDate;
+	}
+
+	public void setDate(LocalDate requestDate) {
+		this.requestDate = requestDate;
 	}
 }

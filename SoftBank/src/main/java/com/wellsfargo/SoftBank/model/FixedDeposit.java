@@ -6,68 +6,47 @@ import javax.persistence.*;
 @Table(name="FixedDeposits")
 
 public class FixedDeposit {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long fd_no;
-	
-	private String AccountNumber;
-	private String CustomerName;
-	private int Fd_Period;
-	private String Amount;
-	
+	private long fromaccount;
+	private String fdproduct;
+	private String fdperiod;
+	private String amount;
 	
 	public FixedDeposit() {
+		
+	}
+	
+	public FixedDeposit(String fromaccount, String fdproduct, String fdperiod, String amount) {
 		super();
+		this.fdproduct = fdproduct;
+		this.fdperiod = fdperiod;
+		this.amount = amount;
 	}
 
-
-	public long getFd_no() {
-		return fd_no;
+	public long getFromaccount() {
+		return fromaccount;
 	}
-
-
-	public void setFd_no(long fd_no) {
-		this.fd_no = fd_no;
+	public void setFromaccount(long fromaccount) {
+		this.fromaccount = fromaccount;
 	}
-
-
-	public String getAccountNumber() {
-		return AccountNumber;
+	public String getFdproduct() {
+		return fdproduct;
 	}
-
-
-	public void setAccountNumber(String accountNumber) {
-		AccountNumber = accountNumber;
+	public void setFdproduct(String fdproduct) {
+		this.fdproduct = fdproduct;
 	}
-
-
-	public String getCustomerName() {
-		return CustomerName;
+	public String getFdperiod() {
+		return fdperiod;
 	}
-
-
-	public void setCustomerName(String customerName) {
-		CustomerName = customerName;
+	public void setFdperiod(String fdperiod) {
+		this.fdperiod = fdperiod;
 	}
-
-
-	public int getFd_Period() {
-		return Fd_Period;
-	}
-
-
-	public void setFd_Period(int fd_Period) {
-		Fd_Period = fd_Period;
-	}
-
-
 	public String getAmount() {
-		return Amount;
+		return amount;
 	}
-
-
 	public void setAmount(String amount) {
-		Amount = amount;
+		this.amount = amount;
 	}
 	
 	

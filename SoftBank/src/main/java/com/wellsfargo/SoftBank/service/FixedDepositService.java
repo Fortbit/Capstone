@@ -16,8 +16,8 @@ public class FixedDepositService {
 	@Autowired
 	private FixedDepositRepository fdrepo;
 	
-	public FixedDeposit fdcust(FixedDeposit fd) {
-		return fdrepo.save(fd);
+	public FixedDeposit fdcust(FixedDeposit FixedDeposit) {
+		return fdrepo.save(FixedDeposit);
 	}
 	
 	public List<FixedDeposit> getAllfixeddeposits(){

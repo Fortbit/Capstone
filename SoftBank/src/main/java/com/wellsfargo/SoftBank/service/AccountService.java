@@ -13,10 +13,19 @@ import com.wellsfargo.SoftBank.repository.AccountRepository;
 @Transactional
 public class AccountService {
 	@Autowired
-	private AccountRepository arepo;
+	private AccountRepository arepo; 
+	
+	@Autowired
+	private UserRestService uRService;
 
 	public List<Account> getAllAccounts(){
 		return arepo.findAll();
+	}
+	
+	
+	public long checkBalance (long accountNumber)
+	{
+		return uRService.getSingleUser(accountNumber).getAccountBalance();
 	}
 }
 

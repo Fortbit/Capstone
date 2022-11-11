@@ -10,54 +10,63 @@ import javax.persistence.Table;
 @Table(name="fundTransfer")
 public class FundTransfer {
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long transactonId;
-	private long sourceAccNumber;
-	private long destAccNumber;
-	private long destAccTypeId;
-	private long transferAmount;
+	private long fromaccount;
+	private String benefecaccno;
+	private String benefecifsc;
+	private String amount;
+	private String benefec;
+	private String benefecacctype;
+	
 	public FundTransfer() {
-		// TODO Auto-generated constructor stub
-	}
-	public FundTransfer(long transactonId, long sourceAccNumber, long destAccNumber, long destAccTypeId,
-			long transferAmount) {
-		super();
-		this.transactonId = transactonId;
-		this.sourceAccNumber = sourceAccNumber;
-		this.destAccNumber = destAccNumber;
-		this.destAccTypeId = destAccTypeId;
-		this.transferAmount = transferAmount;
-	}
-	public long getTransactonId() {
-		return transactonId;
-	}
-	public void setTransactonId(long transactonId) {
-		this.transactonId = transactonId;
-	}
-	public long getSourceAccNumber() {
-		return sourceAccNumber;
-	}
-	public void setSourceAccNumber(long sourceAccNumber) {
-		this.sourceAccNumber = sourceAccNumber;
-	}
-	public long getDestAccNumber() {
-		return destAccNumber;
-	}
-	public void setDestAccNumber(long destAccNumber) {
-		this.destAccNumber = destAccNumber;
-	}
-	public long getDestAccTypeId() {
-		return destAccTypeId;
-	}
-	public void setDestAccTypeId(long destAccTypeId) {
-		this.destAccTypeId = destAccTypeId;
-	}
-	public long getTransferAmount() {
-		return transferAmount;
-	}
-	public void setTransferAmount(long transferAmount) {
-		this.transferAmount = transferAmount;
+		
 	}
 	
-
+	public FundTransfer(long fromaccount, String benefecaccno, String benefecifsc, String amount, String benefec,
+			String benefecacctype) {
+		super();
+		this.fromaccount = fromaccount;
+		this.benefecaccno = benefecaccno;
+		this.benefecifsc = benefecifsc;
+		this.amount = amount;
+		this.benefec = benefec;
+		this.benefecacctype = benefecacctype;
+	}
+	public long getFromaccount() {
+		return fromaccount;
+	}
+	public void setFromaccount(long fromaccount) {
+		this.fromaccount = fromaccount;
+	}
+	public String getBenefecaccno() {
+		return benefecaccno;
+	}
+	public void setBenefecaccno(String benefecaccno) {
+		this.benefecaccno = benefecaccno;
+	}
+	public String getBenefecifsc() {
+		return benefecifsc;
+	}
+	public void setBenefecifsc(String benefecifsc) {
+		this.benefecifsc = benefecifsc;
+	}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public String getBenefec() {
+		return benefec;
+	}
+	public void setBenefec(String benefec) {
+		this.benefec = benefec;
+	}
+	public String getBenefecacctype() {
+		return benefecacctype;
+	}
+	public void setBenefecacctype(String benefecacctype) {
+		this.benefecacctype = benefecacctype;
+	}
+	
+	
 }

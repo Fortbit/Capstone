@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
-public class Users {
+public class User {
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Users {
 	
 	
 	@Column(name ="last_name")
-	String lname;
+	private String lname;
 	
 	@Column(unique = true)
     private String user_name;
@@ -45,12 +45,23 @@ public class Users {
 	@Column(name="mobileNumber")
 	private long mobileNumber;
 	
-	public Users() {
+	@Column(name="accountBalance")
+	private long accountBalance;
+	
+	public long getAccountBalance() {
+		return accountBalance;
+	}
+
+	public void setAccountBalance(long accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+
+	public User() {
 		super();
 		
 	}
 
-	public Users(long account_no, String fname, String middle_name, String lname, String user_name, String password,
+	public User(long account_no, String fname, String middle_name, String lname, String user_name, String password,
 			String securityQuestions, String securityAnswers, int accountTypeID, long mobileNumber) {
 		super();
 		this.account_no = account_no;
@@ -110,13 +121,13 @@ public class Users {
 	}
 
 	public void setPassword(String password) {
-		System.out.println("First :"+password);
-		Base64.Encoder encoder = Base64.getEncoder();  // encrypt password in database field
-        String normalString = password;
-        System.out.println(password +" "+"normal :"+normalString);
-        String encodedString = encoder.encodeToString(
-        normalString.getBytes(StandardCharsets.UTF_8) );
-        this.password = encodedString;
+//		System.out.println("First :"+password);
+//		Base64.Encoder encoder = Base64.getEncoder();  // encrypt password in database field
+//        String normalString = password;
+//        System.out.println(password +" "+"normal :"+normalString);
+//        String encodedString = encoder.encodeToString(
+//        normalString.getBytes(StandardCharsets.UTF_8) );
+        this.password = password;
 	}
 
 	public String getSecurityQuestions() {
